@@ -236,6 +236,20 @@
         .skip-button:hover {
             background-color: #374151 !important;
         }
+
+        .next-button {
+            background-color: #6130d3 !important;
+            font-weight: 600 !important;
+            margin-top: 20px !important;
+            padding: 14px !important;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.3) !important;
+        }
+
+        .next-button:hover {
+            background-color: #7c3aed !important;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.3) !important;
+        }
     </style>
 </head>
 <body>
@@ -275,7 +289,9 @@
                 <button class="button" onclick="answer('tak')" id="btn-tak">Tak</button>
                 <button class="button" onclick="answer('nie')" id="btn-nie">Nie</button>
                 <button class="button skip-button" onclick="skipQuestion()" id="btn-skip">Pomiń pytanie</button>
-                <button class="button hidden" onclick="nextQuestion()" id="next-button">Następne pytanie</button>
+                <button class="button next-button hidden" onclick="nextQuestion()" id="next-button">
+                    Następne pytanie ➔
+                </button>
             </div>
 
             <div id="results" class="card hidden">
@@ -286,7 +302,7 @@
                     </div>
                     <div id="results-details"></div>
                 </div>
-                <button class="button" onclick="showMenu()">Wróć do menu</button>
+                <button class="button" id="back-to-menu-btn">Wróć do menu</button>
             </div>
         </div>
 
@@ -427,7 +443,9 @@
                 btnTak.className = 'button';
             }
 
-            document.getElementById('next-button').classList.remove('hidden');
+            const nextButton = document.getElementById('next-button');
+            nextButton.classList.remove('hidden');
+            nextButton.className = 'button next-button';
         }
 
         function nextQuestion() {
@@ -538,6 +556,30 @@
                 container.appendChild(div);
             });
         }
+
+        // Update showMenu function
+        function showMenu() {
+            // Hide all sections
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('quiz').classList.add('hidden');
+            document.getElementById('quiz-settings').classList.add('hidden');
+            document.getElementById('quiz-controls').classList.add('hidden');
+            
+            // Show menu
+            document.getElementById('menu').classList.remove('hidden');
+            
+            // Reset quiz state
+            currentQuestions = [];
+            currentIndex = 0;
+            score = 0;
+            canAnswer = true;
+            currentMode = 'all';
+        }
+
+        // Add event listener for menu button after DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('back-to-menu-btn').addEventListener('click', showMenu);
+        });
     </script>
 </body>
 </html>
