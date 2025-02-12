@@ -557,18 +557,14 @@
             });
         }
 
-        // Update showMenu function
         function showMenu() {
-            // Hide all sections
             document.getElementById('results').classList.add('hidden');
             document.getElementById('quiz').classList.add('hidden');
             document.getElementById('quiz-settings').classList.add('hidden');
             document.getElementById('quiz-controls').classList.add('hidden');
             
-            // Show menu
             document.getElementById('menu').classList.remove('hidden');
             
-            // Reset quiz state
             currentQuestions = [];
             currentIndex = 0;
             score = 0;
@@ -576,7 +572,6 @@
             currentMode = 'all';
         }
 
-        // Add event listener for menu button after DOM loads
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('back-to-menu-btn').addEventListener('click', showMenu);
         });
