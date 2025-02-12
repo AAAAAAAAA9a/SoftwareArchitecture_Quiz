@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: white;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab {
+            background-color: #1e293b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab:hover {
+            background-color: #2d3748;
+        }
+
+        .tab.active {
+            background-color: #3b82f6;
+        }
+
+        .end-button {
+            background-color: #4b5563;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .end-button:hover {
+            background-color: #374151;
+        }
+
+        .settings {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #1e293b;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #374151;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #3b82f6;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .card {
+            background-color: #1e293b;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        .question-text {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 12px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .button:hover {
+            background-color: #2563eb;
+        }
+
+        .button:active {
+            transform: scale(1.02);
+        }
+
+        .button.correct {
+            background-color: #059669;
+        }
+
+        .button.incorrect {
+            background-color: #dc2626;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .history-item {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .history-item.correct {
+            background-color: rgba(5, 150, 105, 0.2);
+        }
+
+        .history-item.incorrect {
+            background-color: rgba(220, 38, 38, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="tabs">
+                <button class="tab active" onclick="showTab('quiz')">Quiz</button>
+                <button class="tab" onclick="showTab('history')">Historia</button>
+            </div>
+            <div id="quiz-controls" class="hidden">
+                <button class="end-button" onclick="endQuiz()">Zakończ quiz</button>
+            </div>
+        </div>
+
+        <div id="quiz-section">
+            <div id="quiz-settings" class="settings hidden">
+                <span>Pokazuj odpowiedzi od razu:</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="show-answers-toggle" onchange="toggleShowAnswers()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div id="menu" class="card">
+                <h2 style="margin-bottom: 20px">Quiz Wiedzy</h2>
+                <button class="button" onclick="startQuiz('all')">Wszystkie pytania</button>
+                <button class="button" onclick="startQuiz('random')">25 losowych pytań</button>
+            </div>
+
+            <div id="quiz" class="card hidden">
+                <div class="question-header">
+                    <span>Pytanie <span id="current-question">1</span> z <span id="total-questions">0</span></span>
+                    <span>Wynik: <span id="score">0</span></span>
+                </div>
+                <div class="question-text" id="question-text"></div>
+                <button class="button" onclick="answer('tak')" id="btn-tak">Tak</button>
+                <button class="button" onclick="answer('nie')" id="btn-nie">Nie</button>
+                <button class="button hidden" onclick="nextQuestion()" id="next-button">Następne pytanie</button>
+            </div>
+
+            <div id="results" class="card hidden">
+                <h2 style="margin-bottom: 20px">Wyniki</h2>
+                <div style="text-align: center; font-size: 24px; margin-bottom: 20px">
+                    <span id="final-score">0</span> / <span id="final-total">0</span>
+                </div>
+                <button class="button" onclick="showMenu()">Wróć do menu</button>
+            </div>
+        </div>
+
+        <div id="history-section" class="card hidden">
+            <h2 style="margin-bottom: 20px">Historia odpowiedzi</h2>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <script>
+        let questions = [];
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let history = {};
+        let showAnswersImmediately = false;
+        let canAnswer = true;
+
+        fetch('questions.json')
+            .then(response => response.json())
+            .then(data => {
+                questions = data.questions;
+                const savedHistory = localStorage.getItem('quizHistory');
+                if (savedHistory) {
+                    history = JSON.parse(savedHistory);
+                }
+                updateHistoryView();
+            });
+
+        function toggleShowAnswers() {
+            showAnswersImmediately = document.getElementById('show-answers-toggle').checked;
+        }
+
+        function showTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (tab === 'quiz') {
+                document.getElementById('quiz-section').classList.remove('hidden');
+                document.getElementById('history-section').classList.add('hidden');
+            } else {
+                document.getElementById('quiz-section').classList.add('hidden');
+                document.getElementById('history-section').classList.remove('hidden');
+            }
+        }
+
+        function startQuiz(mode) {
+            currentQuestions = mode === 'all' 
+                ? [...questions]
+                : [...questions].sort(() => Math.random() - 0.5).slice(0, 25);
+            
+            currentIndex = 0;
+            score = 0;
+            canAnswer = true;
+            
+            document.getElementById('menu').classList.add('hidden');
+            document.getElementById('quiz').classList.remove('hidden');
+            document.getElementById('quiz-settings').classList.remove('hidden');
+            document.getElementById('quiz-controls').classList.remove('hidden');
+            document.getElementById('next-button').classList.add('hidden');
+            
+            resetButtonStyles();
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = currentQuestions[currentIndex];
+            document.getElementById('question-text').textContent = question.question;
+            document.getElementById('current-question').textContent = currentIndex + 1;
+            document.getElementById('total-questions').textContent = currentQuestions.length;
+            document.getElementById('score').textContent = score;
+            canAnswer = true;
+            resetButtonStyles();
+        }
+
+        function resetButtonStyles() {
+            document.getElementById('btn-tak').className = 'button';
+            document.getElementById('btn-nie').className = 'button';
+            document.getElementById('next-button').classList.add('hidden');
+        }
+
+        function answer(userAnswer) {
+            if (!canAnswer) return;
+            
+            const question = currentQuestions[currentIndex];
+            const isCorrect = userAnswer === question.answer;
+            
+            if (isCorrect) score++;
+
+            history[question.question] = {
+                lastAnswer: userAnswer,
+                isCorrect,
+                attempts: (history[question.question]?.attempts || 0) + 1,
+                correctAttempts: (history[question.question]?.correctAttempts || 0) + (isCorrect ? 1 : 0)
+            };
+            localStorage.setItem('quizHistory', JSON.stringify(history));
+            updateHistoryView();
+
+            if (showAnswersImmediately) {
+                showAnswerFeedback(userAnswer, isCorrect);
+                canAnswer = false;
+            } else {
+                if (currentIndex + 1 < currentQuestions.length) {
+                    currentIndex++;
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }
+        }
+
+        function showAnswerFeedback(userAnswer, isCorrect) {
+            const btnTak = document.getElementById('btn-tak');
+            const btnNie = document.getElementById('btn-nie');
+            
+            if (userAnswer === 'tak') {
+                btnTak.className = `button ${isCorrect ? 'correct' : 'incorrect'}`;
+                btnNie.className = 'button';
+            } else {
+                btnNie.className = `button ${isCorrect ? 'correct' : 'incorrect'}`;
+                btnTak.className = 'button';
+            }
+
+            document.getElementById('next-button').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            if (currentIndex + 1 < currentQuestions.length) {
+                currentIndex++;
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function endQuiz() {
+            document.getElementById('quiz').classList.add('hidden');
+            document.getElementById('quiz-settings').classList.add('hidden');
+            document.getElementById('quiz-controls').classList.add('hidden');
+            document.getElementById('menu').classList.remove('hidden');
+        }
+
+        function showResults() {
+            document.getElementById('quiz').classList.add('hidden');
+            document.getElementById('quiz-settings').classList.add('hidden');
+            document.getElementById('quiz-controls').classList.add('hidden');
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('final-score').textContent = score;
+            document.getElementById('final-total').textContent = currentQuestions.length;
+        }
+
+        function showMenu() {
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('menu').classList.remove('hidden');
+        }
+
+        function updateHistoryView() {
+            const historyList = document.getElementById('history-list');
+            historyList.innerHTML = '';
+
+            questions.forEach(question => {
+                const questionHistory = history[question.question];
+                if (!questionHistory) return;
+
+                const div = document.createElement('div');
+                div.className = `history-item ${questionHistory.isCorrect ? 'correct' : 'incorrect'}`;
+                
+                div.innerHTML = `
+                    <p style="margin-bottom: 10px">${question.question}</p>
+                    <div style="font-size: 14px; color: #94a3b8;">
+                        <div>Ostatnia odpowiedź: ${questionHistory.lastAnswer}</div>
+                        <div>Poprawna odpowiedź: ${question.answer}</div>
+                        <div>Skuteczność: ${Math.round((questionHistory.correctAttempts / questionHistory.attempts) * 100)}%</div>
+                    </div>
+                `;
+                historyList.appendChild(div);
+            });
+        }
+    </script>
+</body>
+</html>

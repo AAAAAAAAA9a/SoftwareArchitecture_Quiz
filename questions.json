@@ -1,0 +1,592 @@
+{
+  "questions": [
+    {
+      "question": "Planowanie projektu - Czy obejmuje skład i strukturę osób tworzących program?",
+      "answer": "tak"
+    },
+    {
+      "question": "Planowanie projektu - Czy obejmuje koszty projektu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy wzorcem strukturalnym jest kompozyt?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy przy testowaniu programów obiektowych testowanie jednostkowe ogranicza się do testowania metod klasy?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy przy testowaniu programów obiektowych testowanie jednostkowe obejmuje testy integralności?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy diagram przypadków użycia jest strukturalny?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy diagram przypadków użycia posiada aktorów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy diagram przypadków użycia umożliwia zamodelowanie funkcjonalności systemu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy model maszyny abstrakcyjnej jest modelem warstwowym?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy model maszyny abstrakcyjnej ułatwia przyrostowe tworzenie oprogramowania?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy w łańcuchu zobowiązań (Chain of Responsibility) zagwarantowana jest obsługa zapytania przez co najmniej jeden obiekt?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy w łańcuchu zobowiązań (Chain of Responsibility) występuje wymiana zmodyfikowanych danych pomiędzy obiektami?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy potoki nadają się do systemów interaktywnych?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy potoki mogą być stosowane tylko do systemów sekwencyjnych?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy kontrole są metodami statycznymi V&V?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy automatyczna analiza statyczna zawsze wskazuje dokładne miejsce usterki?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy kontrole pozwalają wykryć wiele defektów podczas sesji?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy kontrole całkowicie eliminują konieczność przeprowadzenia testów?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy kontrole nie pozwalają określić cech dynamicznych testowanego programu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy podczas kontroli można znaleźć wiele błędów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy punktem widzenia mogą być odbiorcy usług?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy punktem widzenia mogą być źródło lub przeznaczenie danych?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy Abstract Factory zwraca obiekty klas strukturalnie podobne?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy Abstract Factory ukrywa tworzone typy klas przed klientem?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy inżynieria programowania zajmuje się wyłącznie etapem od zakończenia tworzenia specyfikacji do oddania programu klientowi?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy inżynieria programowania zajmuje się tylko dostarczeniem programu?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy inżynieria programowania oznacza tylko program wykonywalny?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy inżynieria programowania definiuje oprogramowanie jako każdą postać zapisu programu komputerowego?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy metoda zwinna jest programowaniem ekstremalnym i polega na ciągłym testowaniu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy model kaskadowy pozwala łatwo i małym nakładem pracy wprowadzić do projektu zmiany?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy model kaskadowy jest oparty na doświadczeniu z innych dziedzin inżynierii?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy diagram klas jest strukturalny?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy diagram klas przedstawia zależności między klasami?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy projektowanie ogólne tworzy się wstępująco?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy projektowanie ogólne pozwala przedstawić projektantom zarys systemu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy projektowanie ogólne dostarcza informacji o ogólnej architekturze systemu?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy sieć działań pozwala wyznaczyć ścieżkę krytyczną?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy sieć działań jest graficznym schematem?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy model interaktywny ma punkt widzenia zewnętrzny?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy model interaktywny jest związany ze zrębem programu?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy testowanie oprogramowania jest częścią V&V?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy weryfikacją jest sprawdzenie, czy produkt spełnia specyfikacje?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy weryfikacją jest sprawdzenie, czy produkt jest budowany zgodnie z ustaleniami klienta?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy pośrednik (PROXY) zdalny kolejkuje zadania?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy efektywność osiąga się przez mało gruboziarnistych klas?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy efektywność osiąga się przez dużo drobnoziarnistych klas?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy obserwator przechodzi przez obserwatorów i uaktualnia stan?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy obserwowany dynamicznie dodaje i usuwa obserwatorów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy wzorzec obserwator wizytuje obserwatorów w celu pobrania aktualnego stanu obiektu obserwowanego?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy w systemach interaktywnych najlepiej stosować zewnętrzne punkty widzenia?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy systemy interaktywne stanowią naturalny sposób strukturalizacji procesu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy adapter jest uniwersalny, jeżeli metody klasy bazowej są nieprzesłonięte?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy złożoność cykliczna jest równa liczbie ścieżek, ile jest instrukcji warunkowych?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy złożoność cykliczna może być zamodelowana graficznie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy złożoność cykliczna jest równa liczbie warunków prostych umieszczonych w testowanym kodzie?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy złożoność cykliczna pozwala określić liczbę niezależnych ścieżek wykonania?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy etnografia bada wymagania wynikające z rzeczywistego sposobu pracy osób, a nie ze sposobu zalecanego przez formalne definicje procesów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy etnografia bada wymagania wynikające z kooperacji i świadomości czynności innych osób?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy testowanie wstępujące jest typem testowania integracyjnego?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy testowanie wstępujące umożliwia określenie projektu architektonicznego we wczesnej fazie?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy modele ogólne są budowane metodą wstępującą i obejmują zasadnicze charakterystyki rzeczywistych systemów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy model ogólny dostarcza informacji o ogólnej architekturze systemu?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy plan przedsięwzięcia może obejmować skład i strukturę zespołu wytwarzającego oprogramowanie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy plan przedsięwzięcia może obejmować sposób opracowania oferty przetargowej?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy narzędzia automatycznej analizy statycznej przeprowadzają analizę przepływu sterowania w programie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy narzędzia automatycznej analizy statycznej zawsze wskazują miejsce usterki w kodzie?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy wzorzec obserwator umożliwia obserwowanemu dynamiczne dołączanie i odłączanie obserwatorów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy wzorzec obserwator weryfikuje obserwatorów?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy dekorator i adapter mają taki sam interfejs jak obiekt tworzony?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy dekorator i adapter są złożone?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy dekorator i Proxy mają identyczne interfejsy jak obiekt obudowywany?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy dekorator i Proxy kontrolują obudowywany obiekt?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy dekorator rozszerza funkcje klasy bazowej?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy wzorce Stan/Strategia pozwalają na przełączanie w zależności od kontekstu lub autorytatywne przełączanie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy strategia i stan umożliwiają dokonywanie wyboru algorytmu/stanu lub może on być determinowany samoczynnie w klasie kontekstu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy strategia minimalizacji przy zarządzaniu zagrożeniami zapobiega wystąpieniu zagrożeń?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy strategia minimalizacji przy zarządzaniu zagrożeniami minimalizuje skutki zagrożeń?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy diagram klas jest diagramem sekwencyjnym?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy diagram klas opisuje powiązania między strukturami?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy na diagramie aktywności można zamodelować udział użytkowników?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy podsystem może działać niezależnie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy podsystemy mogą ze sobą współdziałać?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy pojedynczy podsystem może być traktowany jako samodzielny?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy funkcje różnych podsystemów mogą działać wspólnie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy fasada ogranicza dostęp warstwowy?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy diagram aktywności zawiera aktorów?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy fasada reprezentuje złożony system?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy weryfikacja sprawdza, czy projekt jest zgodny z dokumentacją (specyfikacją)?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy zatwierdzenie sprawdza, czy projekt jest zgodny z oczekiwaniami klienta?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy metoda formalna może być wszędzie stosowana?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy metoda formalna jest oparta na metodach numerycznych?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy singleton ma instancję klasy globalnej?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy prototyp jest czasowo lepszy bez pamięci, bez komplikacji obiektów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy wzorcem strukturalnym jest prototyp?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy agregacja całkowita oznacza, że obiekt jest częścią innego obiektu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy w agregacji całkowitej jeden obiekt może istnieć bez drugiego?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy tworzenie ewolucyjne obejmuje tworzenie badawcze?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy tworzenie ewolucyjne obejmuje tworzenie z porzuceniem?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy singleton pozwala utworzyć tylko jedną instancję?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy singleton jest stosowany, gdy nie wiadomo, jakiego typu obiekty będą potrzebne?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy obserwator umożliwia dynamiczne dodawanie i usuwanie obserwatorów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy obserwator umożliwia obserwowanemu aktualizację stanu obserwatorów?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy do sterowania scentralizowanego należy model wywołanie-powrót?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy do sterowania scentralizowanego należy model sterowania z przerwaniami?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy system z komponentami gruboziarnistymi jest używany, gdy chcemy postawić na szybkość?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy system z komponentami gruboziarnistymi jest używany, gdy chcemy postawić na efektywność?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy iterator może przechodzić po kolekcji obiektów i je modyfikować?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy dekorator jest wzorcem czynnościowym?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy testowanie zwykle wykrywa jeden defekt podczas sesji?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy elementy statyczne w diagramie UML oznacza się przez podkreślenie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy elementy statyczne w diagramie UML oznacza się przez pogrubienie?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy wzorcem strukturalnym jest fasada?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy wzorcem strukturalnym jest Proxy?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy wzorcem konstrukcyjnym jest prototyp?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy wzorcem konstrukcyjnym jest coś, co nim nie było?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy fasada ukrywa część systemu?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy + oznacza private?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy + oznacza public?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy klasy gruboziarniste stosuje się w efektywności?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy klasy gruboziarniste stosuje się w konserwacji?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy punktem widzenia jest źródło lub przeznaczenie danych?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy punktem widzenia jest coś na temat pomiarów?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy include w diagramie przypadków użycia oznacza, że przypadek użycia wymaga wykorzystania innych elementów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy include w diagramie przypadków użycia oznacza, że jeden przypadek jest rozbudowanym innym przypadkiem?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy prototyp wymaga głębokiego kopiowania podczas budowania obiektów o złożonej strukturze?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy iterator formalizuje sposób poruszania się po dowolnej kolekcji danych?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy prostokąt w diagramie sekwencji oznacza pętlę?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy prostokąt w diagramie sekwencji oznacza przepływ alternatywny?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy w diagramie klas klasy reprezentują zależności (asocjacje, dziedziczenie) między nimi?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy w diagramie klas klasy reprezentują byty (abstrakcje)?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy w diagramie sekwencji występują klasy?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy przy testowaniu najlepiej jest, gdy nie ma defektów?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy aktorem może być system zewnętrzny?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy w diagramie przypadków użycia jeden scenariusz odpowiada jednemu przypadkowi użycia?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy w diagramie przypadków użycia zamalowana kropka z otoczką oznacza zakończenie?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy w diagramie aktywności zamalowana kropka z otoczką oznacza zakończenie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy w diagramie stanów zamalowana kropka z otoczką oznacza zakończenie?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy warunek w diagramie aktywności oznacza się trójkątem?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy warunek w diagramie aktywności oznacza się rombem?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy etnografia może całkowicie określić wszystkie wymagania?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy etnografia może być łączona z prototypowaniem?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy inspekcja oprogramowania określa wydajność?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy generalizacja dotyczy aktorów i klas?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy diagram sekwencji obrazuje strukturę klas?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy testy funkcjonalne są testami czarnej skrzynki?",
+      "answer": "tak"
+    },
+    {
+      "question": "Czy trzeba znać strukturę czarnej skrzynki?",
+      "answer": "nie"
+    },
+    {
+      "question": "Czy testy mają niski koszt?",
+      "answer": "nie"
+    }
+  ]
+}
